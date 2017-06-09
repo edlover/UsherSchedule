@@ -1,0 +1,158 @@
+
+body {
+    background-color: #96352f;
+}
+
+.container-fluid {
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin-top: 25px;
+}
+
+.note {
+    font-style: italic;
+    font-size: 80%;
+}
+
+/* CSS for message class borrowed from foobooks example */
+.good_msg, .warning_msg {
+    width:100%;
+    text-align:center;
+    padding:5px;
+    position:fixed;
+    top:0;
+    left:0;
+    font-weight: bold;
+}
+
+.good_msg {
+    background-color: green;
+    color: white;
+}
+
+.warning_msg {
+    background-color: yellow;
+    color: black;
+}
+
+.page-header {
+    background-color: #96352f;
+    padding-top: 20px;
+    margin-top: 30px;
+    color: white;
+    position: relative;
+}
+
+.page-header img {
+    width: 100px;
+}
+
+.nav-tabs {
+    padding-left: 10px;
+    border-bottom: 0;
+}
+
+.nav-border {
+    border-bottom: 1px solid #96352f;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:hover {
+    border: 1px solid #96352f;
+    background: #96352f;
+    color: white;
+}
+
+#COTMSymbol {
+    height: 100px;
+    width: auto;
+}
+
+li#iamhere>a {
+    background: white;
+    color: #96352f;
+}
+
+.login-out {
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#username {
+    font-weight: bold;
+}
+
+a {
+    color: #96352f;
+}
+
+li>label {
+    font-weight: normal;
+}
+
+.table {
+    margin-left: 5%;
+    margin-right: 15%;
+    margin-top: 30px;
+    width:80%;
+}
+
+h3.teamName {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.columnhide {
+    display: none;
+}
+
+form {
+    padding-bottom: 50px;
+}
+
+.form-title {
+    padding-left: 5%;
+}
+
+.form-control {
+    width: auto;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 150px;
+}
+
+.form-group:first-of-type {
+    margin-top: 25px;
+}
+
+.delete_button {
+    margin-top: 30px;
+}
+
+#usher {
+    color: #96352f;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 85%;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+
+footer>a {
+    color: white;
+}
