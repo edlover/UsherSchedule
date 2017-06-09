@@ -1,51 +1,48 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Usher Scheduler application
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This web-based application allows for a schedule administrator to assign
+usher teams to upcoming worship services. This will be a production application
+used specifically for the Church of the Messiah in Gwynedd, PA, where I am the
+coordinator of the usher teams.
 
-## About Laravel
+If you visit the site as a guest, you will be provided with a list of upcoming
+worship services showing the usher teams assigned to staff each service. While
+the database may contain many services, only those that are greater or equal
+to the current date are displayed.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+As a guest, that is where your visibility and functionality stops.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+If you log in to the application (this version of the application is strictly
+using the jill@harvard.edu and jamal@harvard.edu with the password provided in
+the course notes), you will have much more functionality:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+    - the ability to edit upcoming worship services
+    - the ability to create new worship services and assign usher teams
+    - the ability to view and manage usher teams
+    - the ability to create new ushers and assign them to a team or teams
 
-## Learning Laravel
+There are several database tables used in this application:
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+    - Services - contains all the worship services that have been created. This
+      table has a 1 many relationship with the teams table.
+    - Teams - contains the ushering teams. This table has a many to one
+      relationship with the services table and a many to many relationship with
+      the ushers table.
+    - Ushers - contains the list of all ushers with their names and email
+      addresses. This table has a many to many relationship with the teams
+      table.
+    - Users - contains the user accounts allowed to log in to this application.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Functionality that I would like to add:
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
-
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+    - Continue to enhance the login functionality, allowing preapproved users
+      the ability to login, change their passwords, reset their passwords, etc.
+    - Create a scheduled job that runs each week to send an email reminder to
+      those ushers scheduled to staff the next weekend's worship service, acting
+      as a reminder.
+    - Update the view where upcoming worship services are displayed. I would
+      like to break up the table by month.
+    - Add a calendar date-picker to the new service form.
+    - Add a process whereby the database is backed up.
+    - Add "confirm deletion" functionality for ushers and worship services
+    - and more...
