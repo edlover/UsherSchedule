@@ -42,7 +42,7 @@
                     </div>
                     <div class='col-xs-3'>
 
-                        <h2>Usher Scheduler</h2>
+                        <h2>Usher Schedule</h2>
                     </div>
                 </div>
                 <div class='row nav-border'>
