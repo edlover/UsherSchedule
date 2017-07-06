@@ -9,8 +9,20 @@
         <div class='container-fluid'>
             <h1>Usher Team assignments for upcoming Worship Services</h1>
 
-            <table class='table table-striped table-hover'>
-                <tr>
+            <div id='tablefilter'>
+                Currently showing:
+                <select id='teamlist' name='teamlist'>
+                    <option value='all'>All teams</option>
+                    <option value='Team 1'>Team 1 only</option>
+                    <option value='Team 2'>Team 2 only</option>
+                    <option value='Team 3'>Team 3 only</option>
+                    <option value='Team 4'>Team 4 only</option>
+                    <option value='Team 5'>Team 5 only</option>
+                </select>
+            </div>
+
+            <table id='servicesTable' class='table table-striped table-hover'>
+                <thead>
                     <th class='columnhide'>ID</th>
                     <th>Date</th>
                     <th>Time</th>
@@ -20,7 +32,7 @@
                     @if(Auth::check())
                         <th>Modify</th>
                     @endif
-                </tr>
+                </thead>
                 @foreach($services as $service)
                     <!-- Only show services with dates in the future -->
                     @if($service['date'] >= Carbon\Carbon::now())
