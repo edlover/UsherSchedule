@@ -6,10 +6,10 @@
 
 @section('content')
     <main id='part3'>
-        <div class='container-fluid'>
-            <h1>Ushering Teams</h1>
-            @foreach($teams as $team)
-                <h3 class='teamName'>{{ $team->team_name }}</h3>
+        <h1>Ushering Teams</h1>
+        @foreach($teams as $team)
+            <h3 class='teamName'>{{ $team->team_name }}</h3>
+            <div class="table-responsive">
                 <table class='table table-striped table-hover'>
                     <tr>
                         <th class='columnhide'>ID</th>
@@ -36,7 +36,7 @@
                             </tr>
                         @endforeach
                 </table>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </main>
 @endsection
